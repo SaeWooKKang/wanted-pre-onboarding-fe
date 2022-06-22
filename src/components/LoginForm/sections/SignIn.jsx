@@ -5,6 +5,8 @@ import Input from './Input';
 import LoginBtn from './LoginBtn';
 import useInput from '../../../hooks/useInput';
 
+import { useNavigate } from 'react-router-dom';
+
 const SignInWrapper = styled.div`
   .form-container {
     display: flex;
@@ -21,12 +23,17 @@ const SignInWrapper = styled.div`
 `;
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [id, handleIdChange] = useInput('');
   const [pw, handlePwChange] = useInput('');
 
   const handleLoginBtnClick = () => {
-    console.log('login clicked!');
-    // 비동기 요청 로직...
+    // console.log('login clicked!');
+    localStorage.setItem(
+      'user',
+      JSON.stringify({ isLogedIn: true, data: { id } })
+    );
+    navigate('/main');
   };
 
   return (

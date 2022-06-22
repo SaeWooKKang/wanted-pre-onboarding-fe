@@ -79,7 +79,7 @@ const JoinWrapper = styled.div`
   border: 1px solid #1f202146;
 `;
 
-const LoginForm = () => {
+const Login = () => {
   return (
     <Wrapper>
       <div className="body">
@@ -120,4 +120,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Login;
