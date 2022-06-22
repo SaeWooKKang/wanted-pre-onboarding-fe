@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Input from './Input';
 import LoginBtn from './LoginBtn';
-import useInput from '../../../hooks/useInput';
+import useInput from '../../hooks/useInput';
 
 import { useNavigate } from 'react-router-dom';
 

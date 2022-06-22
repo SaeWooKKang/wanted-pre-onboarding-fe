@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Logo from '../components/LoginForm/sections/Logo';
-import SignIn from '../components/LoginForm/sections/SignIn';
-import SocialLogin from '../components/LoginForm/sections/SocialSignIn';
-import FindPassWord from '../components/LoginForm/sections/FindPassWord';
+import Logo from '../components/LoginForm/Logo';
+import SignIn from '../components/LoginForm/SignIn';
+import SocialLogin from '../components/LoginForm/SocialSignIn';
+import FindPassWord from '../components/LoginForm/FindPassWord';
 
 const Wrapper = styled.div`
   position: fixed;
