@@ -14,7 +14,7 @@ const LoginCheck = (props) => {
     if (!loginData || !loginData.isLogedIn) {
       navigate('/login');
     }
-  });
+  }, []);
 
   return props.children;
 };

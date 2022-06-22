@@ -1,17 +1,21 @@
 import React from 'react';
-import LoginCheck from '../common/LoginCheck';
+import LoginCheck from '../components/common/LoginCheck';
 import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogOut = () => {
+    localStorage.setItem(
+      'user',
+      JSON.stringify({ isLogedIn: false, data: null })
+    );
     navigate('/login');
   };
 
   return (
     <LoginCheck>
-      <button onClick={handleLogin}>로그아웃</button>
+      <button onClick={handleLogOut}>로그아웃</button>
       <>Main Component!</>
     </LoginCheck>
   );
