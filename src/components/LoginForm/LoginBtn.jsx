@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const LoginBtn = styled.button`
   width: 100%;
   height: 35px;
-  background-color: #bae0fc;
+  background-color: ${(props) => (props.bg ? '#0095f6' : '#bae0fc')};
   border: none;
   margin: 0;
   border-radius: 4px;

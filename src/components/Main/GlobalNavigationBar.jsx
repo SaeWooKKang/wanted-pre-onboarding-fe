@@ -8,10 +8,54 @@ import { IoMdPaperPlane } from 'react-icons/io';
 import { BsPlusSquare } from 'react-icons/bs';
 import { AiOutlineCompass, AiOutlineHeart } from 'react-icons/ai';
 
-const ContainerWrapper = styled.div`
+const GNB = () => {
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    localStorage.setItem(
+      'user',
+      JSON.stringify({ isLogedIn: false, data: null })
+    );
+    navigate('/login');
+  };
+
+  return (
+    <Container>
+      <Content>
+        <div>instagram</div>
+
+        <input placeholder="검색" />
+
+        <Ul>
+          <li>
+            <HiHome size={24} />
+          </li>
+          <li>
+            <IoMdPaperPlane size={24} />
+          </li>
+          <li>
+            <BsPlusSquare size={24} />
+          </li>
+          <li>
+            <AiOutlineCompass size={24} />
+          </li>
+          <li>
+            <AiOutlineHeart size={24} />
+          </li>
+          <li onClick={handleLogOut}>
+            <HiLogout size={24} />
+          </li>
+        </Ul>
+      </Content>
+    </Container>
+  );
+};
+
+const Container = styled.div`
   position: sticky;
   left: 0;
   top: 0;
+
   width: 100%;
   height: auto;
 
@@ -20,8 +64,7 @@ const ContainerWrapper = styled.div`
 
   border-bottom: 1px solid #efefef;
 `;
-
-const ContentWrapper = styled.header`
+const Content = styled.header`
   width: 935px;
   height: 60px;
   padding: 0 20px;
@@ -81,48 +124,4 @@ const Ul = styled.ul`
     content: '';
   }
 `;
-
-const GNB = () => {
-  const navigate = useNavigate();
-
-  const handleLogOut = () => {
-    localStorage.setItem(
-      'user',
-      JSON.stringify({ isLogedIn: false, data: null })
-    );
-    navigate('/login');
-  };
-
-  return (
-    <ContainerWrapper>
-      <ContentWrapper>
-        <div>instagram</div>
-
-        <input placeholder="검색" />
-
-        <Ul>
-          <li>
-            <HiHome size={24} />
-          </li>
-          <li>
-            <IoMdPaperPlane size={24} />
-          </li>
-          <li>
-            <BsPlusSquare size={24} />
-          </li>
-          <li>
-            <AiOutlineCompass size={24} />
-          </li>
-          <li>
-            <AiOutlineHeart size={24} />
-          </li>
-          <li onClick={handleLogOut}>
-            <HiLogout size={24} />
-          </li>
-        </Ul>
-      </ContentWrapper>
-    </ContainerWrapper>
-  );
-};
-
 export default GNB;

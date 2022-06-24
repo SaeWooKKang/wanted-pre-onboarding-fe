@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
 import Input from './Input';
 import LoginBtn from './LoginBtn';
 import useInput from '../../hooks/useInput';
+import { validationCheck } from '../../util/inputValidation';
+import { EMAIL_REG, PW_REG } from '../../constants/regExp';
+import { loginUser } from '../../util/loginUser';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -24,16 +27,54 @@ const SignInWrapper = styled.div`
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const [id, handleIdChange] = useInput('');
+  const [email, handleIdChange] = useInput('');
   const [pw, handlePwChange] = useInput('');
 
+  const [idValidation, setIdValidation] = useState(true);
+  const [pwValidation, setPwValidation] = useState(true);
+
+  const [loginBtnActive, setLoginBtnActive] = useState(false);
+
+  const loginActive = () => {
+    console.log('loginActive', email, pw);
+    if (!email || !pw) return setLoginBtnActive(false);
+
+    if (idValidation && pwValidation) {
+      setLoginBtnActive(true);
+    } else {
+      setLoginBtnActive(false);
+    }
+  };
+
+  useEffect(() => {
+    setIdValidation(validationCheck(email, EMAIL_REG));
+  }, [email]);
+
+  useEffect(() => {
+    setPwValidation(validationCheck(pw, PW_REG));
+  }, [pw]);
+
+  useEffect(() => {
+    loginActive();
+  }, [idValidation, pwValidation, email, pw]);
+
   const handleLoginBtnClick = () => {
-    // console.log('login clicked!');
-    localStorage.setItem(
-      'user',
-      JSON.stringify({ isLogedIn: true, data: { id } })
-    );
-    navigate('/main');
+    const body = {
+      email: email,
+      pw: pw,
+    };
+
+    loginUser(body).then((res) => {
+      if (res.loginSuccess) {
+        localStorage.setItem(
+          'user',
+          JSON.stringify({ isLogedIn: true, data: res.email })
+        );
+        navigate('/main');
+      } else {
+        alert('Fail to login');
+      }
+    });
   };
 
   return (
@@ -41,12 +82,12 @@ const SignIn = () => {
       <div className="form-container">
         <div className="input-container">
           <Input
-            type={'id'}
-            name={'login-id'}
+            type={'email'}
+            name={'login-email'}
             placeholder={'이메일'}
-            text={id}
+            text={email}
             onChange={handleIdChange}
-            borderColor={'orange'}
+            borderColor={idValidation}
           />
         </div>
         <div className="input-container">
@@ -56,12 +97,14 @@ const SignIn = () => {
             placeholder={'비밀번호'}
             text={pw}
             onChange={handlePwChange}
-            borderColor={'orange'}
+            borderColor={pwValidation}
           />
         </div>
       </div>
       <div className="login-btn">
-        <LoginBtn onClick={handleLoginBtnClick}>로그인</LoginBtn>
+        <LoginBtn bg={loginBtnActive} onClick={handleLoginBtnClick}>
+          로그인
+        </LoginBtn>
       </div>
     </SignInWrapper>
   );

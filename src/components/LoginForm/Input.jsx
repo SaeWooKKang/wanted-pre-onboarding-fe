@@ -9,15 +9,9 @@ const Input = styled.input`
   margin-bottom: 12px;
   padding: 13px 12px;
   position: relative;
-  color: black;
 
-  ::placeholder {
-    color: #1f202177;
-  }
-  &:focus {
-    border: 1px solid ${(props) => props.borderColor || 'black'};
-    outline: none;
-  }
+  color: black;
+  border: 1px solid ${(props) => (props.borderColor ? 'none' : 'red')};
 `;
 
 export default Input;
