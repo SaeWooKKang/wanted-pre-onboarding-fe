@@ -7,6 +7,7 @@ import { HiHome, HiLogout } from 'react-icons/hi';
 import { IoMdPaperPlane } from 'react-icons/io';
 import { BsPlusSquare } from 'react-icons/bs';
 import { AiOutlineCompass, AiOutlineHeart } from 'react-icons/ai';
+import { Ul } from '../../styles/Ul.styled';
 
 const GNB = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const GNB = () => {
 
         <input placeholder="검색" />
 
-        <Ul>
+        <Ul betweenMargin="22px">
           <li>
             <HiHome size={24} />
           </li>
@@ -62,7 +63,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #dbdbdb;
+  background: rgb(255, 255, 255);
 `;
 const Content = styled.header`
   width: 935px;
@@ -82,10 +84,12 @@ const Content = styled.header`
     background: #efefef;
     border-radius: 4px;
   }
-  .active {
+  /* .active {
     display: none;
-  }
-  .search {
+  } */
+  /* .search {
+    width: 100%;
+    background-color: red;
     position: absolute;
     display: flex;
     top: 22px;
@@ -97,7 +101,7 @@ const Content = styled.header`
       margin-left: 5px;
       content: '';
     }
-  }
+  } */
 
   input::-webkit-input-placeholder {
     background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
@@ -110,18 +114,6 @@ const Content = styled.header`
     input {
       display: none;
     }
-  }
-`;
-const Ul = styled.ul`
-  display: flex;
-
-  li:hover {
-    cursor: pointer;
-  }
-
-  > * + *::before {
-    margin-left: 22px;
-    content: '';
   }
 `;
 export default GNB;

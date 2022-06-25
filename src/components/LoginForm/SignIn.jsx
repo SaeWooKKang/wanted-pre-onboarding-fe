@@ -60,15 +60,15 @@ const SignIn = () => {
 
   const handleLoginBtnClick = () => {
     const body = {
-      email: email,
-      pw: pw,
+      email,
+      pw,
     };
 
     loginUser(body).then((res) => {
       if (res.loginSuccess) {
         localStorage.setItem(
           'user',
-          JSON.stringify({ isLogedIn: true, data: res.email })
+          JSON.stringify({ isLogedIn: true, data: res.user })
         );
         navigate('/main');
       } else {

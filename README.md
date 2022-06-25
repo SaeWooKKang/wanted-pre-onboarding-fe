@@ -70,23 +70,23 @@ npm start
 - [x] 로그인이 완료되면 라우터에서 Main Page로 이동되어야 합니다. (history push 사용 X)
 - [x] 로그아웃되면 (Local Storage가 삭제되면) Login Page로 이동되어야 합니다.(history push 사용 X)
 
-## Assignment5 - `Feeds`
+## 👌 Assignment5 - `Feeds`
 
-- 피드 컴포넌트를 개발합니다.
-- 레이아웃을 인스타그램과 동일하게 구현해주시면 됩니다. (픽셀 단위까지 맞추실 필요는 없으나 보기에 자연스럽도록 개발해주세요.)
-- 각 Feed의 정보는 public/data 디렉토리에 json형식으로 구성하여 fetch, axios 등을 이용하여 data를 요청해야 합니다.
-- Feed는 최소 3개이상 랜더링 되도록 구현해주세요.
+- [x] 피드 컴포넌트를 개발합니다.
+- [x] 레이아웃을 인스타그램과 동일하게 구현해주시면 됩니다. (픽셀 단위까지 맞추실 필요는 없으나 보기에 자연스럽도록 개발해주세요.)
+- [x] 각 Feed의 정보는 public/data 디렉토리에 json형식으로 구성하여 fetch, axios 등을 이용하여 data를 요청해야 합니다.
+- [x] Feed는 최소 3개이상 랜더링 되도록 구현해주세요.
 - 각각의 Feed에 댓글을 추가할 수 있도록 개발해주세요. (Enter key & 클릭으로 게시 가능하도록)
-- Feed는 화면 중앙에 위치 해야하며 모바일 대응이 가능해야 합니다.
-- 게시 후 Input은 초기화 되어야 합니다.
-- Feed의 이미지는 자유롭게 사용하시되 각각 사이즈가 각각 달라야 합니다. (ex. 정사각형, 세로가 긴 것, 가로가 긴 것 등)
-- Feed Image는 자유롭게 사용하셔도 되지만 필요하시면 아래의 url을 사용하세요.(사이즈를 변경하셔도 됩니다. 같은 사이즈 X)
-  "[https://source.unsplash.com/random/600x500](https://source.unsplash.com/random/600x500)"
-  "[https://source.unsplash.com/random/900x500](https://source.unsplash.com/random/900x500)"
-  "[https://source.unsplash.com/random/700x1080](https://source.unsplash.com/random/700x1080)"
-- Feeds의 Image가 로딩된 후 컴포넌트가 로딩 되도록 Loading을 구현해 주세요 (로딩바는 없어도 괜찮습니다. Hint: image.onload)
-  - (아이콘은 자유롭게 사용하셔도 괜찮습니다. icon 라이브러리 설치 O)
-  - 메인 Page 전체에 반응형 CSS가 적용 되어있는지 평가합니다. (Media Query 사용)
+- [x] Feed는 화면 중앙에 위치 해야하며 모바일 대응이 가능해야 합니다.
+- [x] 게시 후 Input은 초기화 되어야 합니다.
+- [x] Feed의 이미지는 자유롭게 사용하시되 각각 사이즈가 각각 달라야 합니다. (ex. 정사각형, 세로가 긴 것, 가로가 긴 것 등)
+- [x] Feed Image는 자유롭게 사용하셔도 되지만 필요하시면 아래의 url을 사용하세요.(사이즈를 변경하셔도 됩니다. 같은 사이즈 X)
+      "[https://source.unsplash.com/random/600x500](https://source.unsplash.com/random/600x500)"
+      "[https://source.unsplash.com/random/900x500](https://source.unsplash.com/random/900x500)"
+      "[https://source.unsplash.com/random/700x1080](https://source.unsplash.com/random/700x1080)"
+- [x]Feeds의 Image가 로딩된 후 컴포넌트가 로딩 되도록 Loading을 구현해 주세요 (로딩바는 없어도 괜찮습니다. Hint: image.onload)
+  - [x] (아이콘은 자유롭게 사용하셔도 괜찮습니다. icon 라이브러리 설치 O)
+  - [x] 메인 Page 전체에 반응형 CSS가 적용 되어있는지 평가합니다. (Media Query 사용)
 
 ## 참고 이미지
 
