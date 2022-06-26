@@ -21,9 +21,9 @@ const GNB = () => {
   };
 
   return (
-    <Container>
+    <Wrapper>
       <Content>
-        <div>instagram</div>
+        <h1>instagram</h1>
 
         <input placeholder="검색" />
 
@@ -48,11 +48,11 @@ const GNB = () => {
           </li>
         </Ul>
       </Content>
-    </Container>
+    </Wrapper>
   );
 };
 
-const Container = styled.div`
+const Wrapper = styled.header`
   position: sticky;
   left: 0;
   top: 0;
@@ -84,24 +84,6 @@ const Content = styled.header`
     background: #efefef;
     border-radius: 4px;
   }
-  /* .active {
-    display: none;
-  } */
-  /* .search {
-    width: 100%;
-    background-color: red;
-    position: absolute;
-    display: flex;
-    top: 22px;
-    color: #a7a4a4eb;
-
-    margin-left: 16px;
-
-    > * + *::before {
-      margin-left: 5px;
-      content: '';
-    }
-  } */
 
   input::-webkit-input-placeholder {
     background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);

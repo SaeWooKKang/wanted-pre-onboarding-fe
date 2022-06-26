@@ -1,29 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
-import Input from './Input';
-import LoginBtn from './LoginBtn';
 import useInput from '../../hooks/useInput';
 import { validationCheck } from '../../util/inputValidation';
 import { EMAIL_REG, PW_REG } from '../../constants/regExp';
 import { loginUser } from '../../util/loginUser';
 
 import { useNavigate } from 'react-router-dom';
-
-const SignInWrapper = styled.div`
-  .form-container {
-    display: flex;
-    flex-direction: column;
-
-    .input-container {
-      display: flex;
-      justify-content: center;
-    }
-  }
-  .login-btn {
-    margin-bottom: 12px;
-  }
-`;
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -36,7 +19,6 @@ const SignIn = () => {
   const [loginBtnActive, setLoginBtnActive] = useState(false);
 
   const loginActive = () => {
-    console.log('loginActive', email, pw);
     if (!email || !pw) return setLoginBtnActive(false);
 
     if (idValidation && pwValidation) {
@@ -59,6 +41,8 @@ const SignIn = () => {
   }, [idValidation, pwValidation, email, pw]);
 
   const handleLoginBtnClick = () => {
+    if (!loginBtnActive) return -1;
+
     const body = {
       email,
       pw,
@@ -78,7 +62,7 @@ const SignIn = () => {
   };
 
   return (
-    <SignInWrapper>
+    <Wrapper>
       <div className="form-container">
         <div className="input-container">
           <Input
@@ -106,8 +90,49 @@ const SignIn = () => {
           로그인
         </LoginBtn>
       </div>
-    </SignInWrapper>
+    </Wrapper>
   );
 };
+const Wrapper = styled.section`
+  .form-container {
+    display: flex;
+    flex-direction: column;
+
+    .input-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .login-btn {
+    margin-bottom: 12px;
+  }
+`;
+const Input = styled.input`
+  width: 100%;
+  height: auto;
+  border: 1px solid #1f202124;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 13px 12px;
+  position: relative;
+
+  color: black;
+  border: 1px solid ${(props) => (props.borderColor ? 'none' : 'red')};
+`;
+const LoginBtn = styled.button`
+  width: 100%;
+  height: 35px;
+  background-color: ${(props) => (props.bg ? '#0095f6' : '#bae0fc')};
+  border: none;
+  margin: 0;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 export default SignIn;

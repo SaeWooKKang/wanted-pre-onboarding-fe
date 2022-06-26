@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { emailToId } from '../../util/emailToId';
 
 const Comment = ({ comments }) => {

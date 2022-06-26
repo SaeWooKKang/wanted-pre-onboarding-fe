@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import LoginCheck from '../components/common/LoginCheck';
 import GNB from '../components/Main/GlobalNavigationBar';
 import Feed from '../components/Main/Feed';
+
 import { FlexBox } from '../styles/FlexBox.styled';
 
 const Main = () => {
@@ -18,23 +19,23 @@ const Main = () => {
 
   return (
     <LoginCheck>
-      {/* GNB */}
-      <GNB />
+      <Wrapper>
+        {/* GNB */}
+        <GNB />
 
-      {/* Feeds */}
-      <FeedsWrapper>
+        {/* Feeds */}
         <FlexBox flexDirection="column" justifyContent="center">
           {feeds &&
-            feeds.map((feed, i) => (
+            feeds.map((feed) => (
               <Feed key={feed.key} data={feed} setFeeds={setFeeds} />
             ))}
         </FlexBox>
-      </FeedsWrapper>
+      </Wrapper>
     </LoginCheck>
   );
 };
 
-const FeedsWrapper = styled.div`
+const Wrapper = styled.div`
   background: rgb(255, 255, 255);
 `;
 

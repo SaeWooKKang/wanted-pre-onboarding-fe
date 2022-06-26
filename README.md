@@ -1,6 +1,34 @@
-# :: 원티드 프리온보딩 프론트엔드 코스 사전과제
+# Wanted[FE] Pre onboarding Assignment
 
-## Quick Overview
+## Introduce
+
+방분해 주셔서 감사합니다.  
+저는 작년 6월부터 FE 개발자를 독학으로 준비하고 있습니다.  
+아직 많이 부족하지만 이번 기회를 통해 좋은 멘토, 동료 분들과 함께 성장 하고자 지원하게 되었습니다. 감사합니다 :)
+
+---
+
+## Directory
+
+### src
+
+```
+ ┣ 📂 components
+ ┃ ┣ 📂 LogIn
+ ┃ ┣ 📂 Main
+ ┃ ┗ 📂 common
+ ┣ 📂 constants
+ ┣ 📂 hooks
+ ┣ 📂 pages
+ ┣ 📂 styles
+ ┣ 📂 util
+ ┣ 📜 App.js
+ ┗ 📜 index.js
+```
+
+---
+
+## Execution
 
 ```
 npm install
@@ -8,86 +36,74 @@ npm install
 npm start
 ```
 
-\*\* React를 구동할 수 있는 기본적인 환경이 필요합니다.
+## User Dummy Data
 
-## 진행 가이드
-
-- 위의 Repository를 포크(`fork`) 하여 개발 URL 제출해주세요.
-  - [URL 제출 링크](https://forms.gle/LcXnfrgtQp5MRrdU8)
-- fork 레파지토리 명은 `wanted-pre-onboarding-fe`로 생성해 주세요.
-- 과제 수행 개수에 따라 기본적인 평가가 이루어집니다.
-- 코드의 일관성, 가독성, 함수 분리,컴포넌트 설계, 코드 퀄리티 등을 기준으로 세부적인 평가가 이루어집니다.
-- 해당 과제에 대한 해설은 개강 후 진행될 예정입니다.
-- 선발하는 과정에서 최소한의 수준을 평가하기 위한 과제로 아래 Assignment 외 다른 부분을 완벽하게 구현하지 않으셔도 됩니다. (평가에 반영하지 않습니다.)
-- README.md를 꼭 작성해 주세요. 본인에 대한 소개나 과제 풀이에 관한 것 등 자유롭게 작성해주시면 됩니다.
-- 함수형 컴포넌트로 개발해주세요. (React Hooks)
-
-\*문의 사항은 사전 과제 Repository의 Issue로 등록해 주세요.
-
-# :: 과제 안내
+```
+email: qqq@naver.com
+pw   : qqq111Q!
+```
 
 ---
 
-## 👌 Assignment 1 - `Login`
+## Stack
 
-- [x] 로그인 컴포넌트를 개발합니다. (최소화 - `input` 2개, `button` 1개)
-- [x] 약간의 랜더링 최적화를 고려해주세요. (Hint: Ref 사용)
-- [x] 로그인 시(ID, PW 입력 후 버튼 클릭)
-  - [x] Local Storage 에 로그인 정보 저장 (다시 접속했을 경우에 정보가 유지 되어야 합니다.)
-  - [x] 메인 페이지로 이동합니다.(로그인이 완료되면)
-  - [x] 반응형 CSS 적용은 하지 않으셔도 좋습니다. 해당 페이지는 반응형 CSS를 평가하지 않습니다.
+`React.JS`, `styled-components`, `react-router-dom`
 
-## 👌 Assignment2 - `GNB`
+---
 
-- [x] 로그인 후 이동하는 메인페이지의 GNB를 구현해주세요.
-- [x] 구현 시 스크롤에 관계 없이 화면 상단에 고정되는 `sticky` GNB 를 구현해주세요.
-- [x] 모바일 사이즈의 경우 가운데 Input 창이 사라져야 하고 양옆으로(space-between) 정렬 되어야 합니다.
-- [x] 가장 오른쪽 아이콘을 Logout으로 변경해주세요.
-- [x] 그 외 기능은 평가하지 않습니다.
-  - [x] (가운데 검색바는 `input` 요소로만 만들어주세요. 기능은 X)
-  - [x] (아이콘은 자유롭게 사용하셔도 괜찮습니다. 아이콘 라이브러리 설치 O)
+## Task
 
-## 👌 Assignment3 - `Validation`
+```
+과제의 요구사항에 맞게 구현하기 위해 노력하였습니다.
+반복되는 코드들은 util, styles, hooks 폴더로 분리 하여 재사용 하였습니다.
+```
 
-- 이메일과 비밀번호의 유효성을 확인합니다.
-  - [x] 이메일 조건 - `@` , `.` 포함
-  - [x] 비밀번호 조건 - 대문자, 숫자, 특수문자 포함 8자리 이상
-  - [x] 로그인 시 이메일과 비밀번호가 등록되어 있는 것과 일치 여부 확인
-- Validation 상태를 CSS로 표현해주세요.
-  - [x] Email Input
-        Validation Check를 통해 Email 형식이 아닌 경우 표시를해주세요. (ex. boder가 red색상으로 변경)
-  - [x] Password Input
-        Validation Check를 통해 Password 형식이 아닌 경우 표시를 해주세요. (ex. boder가 red색상으로 변경.)
-  - [x] Login Button
-        Validation Check가 모두 통과된 경우에만 Button 색상을 진하게 변경해주세요. (통과 되지 못한 경우와 구별이 가능해야 합니다.)
-- 유효성 검사 시 아래 두 가지를 적용해서 구현해주세요.
+### Login
+
+- 구현
+  - [x] 로그인 컴포넌트 (`input` 2개, `button` 1개)
+  - [x] Local Storage에 로그인 정보 저장
+- 렌더링 최적화
+
+  - [x] 개별 컴포넌트로 분리하여 입력시 Signin 컴포넌트만 렌더링 됨
+
+### GNB
+
+- 구현
+  - [x] GNB `sticky`
+  - [x] 반응형 GNB로그인시 input 제거)
+  - [x] 가장 오른쪽 아이콘 Logout으로 변경
+
+### Validation
+
+- 이메일과 비밀번호 유효성 확인
   - [x] 정규표현식 사용
-  - [x] Validation 함수 분리
+  - [x] 이메일 조건: `@` , `.` 포함
+  - [x] 비밀번호 조건: 대문자, 숫자, 특수문자 포함 8자리 이상
+  - [x] 등록된 email, pw 일치시 main 페이지 이동
+- Validation 상태를 CSS로 표현
+  - [x] email형식 아닌 경우 border: red
+  - [x] pw형식 아닌 경우 border: red
+  - [x] validation 통과시 로그인 button 색상 변경
 
-## 👌 Assignment4 - `Routing`
+### Routing
 
-- [x] 로그인,로그아웃 시 라우팅 로직을 통해 페이지가 이동 되도록 구현해주세요. (Local Storage)
-- [x] 로그인이 완료되면 라우터에서 Main Page로 이동되어야 합니다. (history push 사용 X)
-- [x] 로그아웃되면 (Local Storage가 삭제되면) Login Page로 이동되어야 합니다.(history push 사용 X)
+- 로그인 성공
+  - [x] main 페이지로 이동
+- 로그아웃 시
+  - [x] login페이지로 이동
 
-## 👌 Assignment5 - `Feeds`
+### Feeds
 
-- [x] 피드 컴포넌트를 개발합니다.
-- [x] 레이아웃을 인스타그램과 동일하게 구현해주시면 됩니다. (픽셀 단위까지 맞추실 필요는 없으나 보기에 자연스럽도록 개발해주세요.)
-- [x] 각 Feed의 정보는 public/data 디렉토리에 json형식으로 구성하여 fetch, axios 등을 이용하여 data를 요청해야 합니다.
-- [x] Feed는 최소 3개이상 랜더링 되도록 구현해주세요.
-- 각각의 Feed에 댓글을 추가할 수 있도록 개발해주세요. (Enter key & 클릭으로 게시 가능하도록)
-- [x] Feed는 화면 중앙에 위치 해야하며 모바일 대응이 가능해야 합니다.
-- [x] 게시 후 Input은 초기화 되어야 합니다.
-- [x] Feed의 이미지는 자유롭게 사용하시되 각각 사이즈가 각각 달라야 합니다. (ex. 정사각형, 세로가 긴 것, 가로가 긴 것 등)
-- [x] Feed Image는 자유롭게 사용하셔도 되지만 필요하시면 아래의 url을 사용하세요.(사이즈를 변경하셔도 됩니다. 같은 사이즈 X)
-      "[https://source.unsplash.com/random/600x500](https://source.unsplash.com/random/600x500)"
-      "[https://source.unsplash.com/random/900x500](https://source.unsplash.com/random/900x500)"
-      "[https://source.unsplash.com/random/700x1080](https://source.unsplash.com/random/700x1080)"
-- [x]Feeds의 Image가 로딩된 후 컴포넌트가 로딩 되도록 Loading을 구현해 주세요 (로딩바는 없어도 괜찮습니다. Hint: image.onload)
-  - [x] (아이콘은 자유롭게 사용하셔도 괜찮습니다. icon 라이브러리 설치 O)
-  - [x] 메인 Page 전체에 반응형 CSS가 적용 되어있는지 평가합니다. (Media Query 사용)
-
-## 참고 이미지
-
-[참고 이미지 링크](https://bclef25.notion.site/1ed6d5b2192b45eeb4104a67f6a77250)
+- 구현
+  - [x] 피드 컴포넌트를 개발
+  - [x] Feed에 comment 작성 기능
+  - [x] 반응형
+  - [x] comment submit시 input 초기화
+  - [x] 각기 다른 사이즈의 이미지 대응
+- Feed 데이터 위치
+  - [x] public/data
+- 데이터 형식
+  - [x] json
+- Imgae 로딩 후 컴포넌트 렌더링
+  - [x] blob을 사용하여 구현
