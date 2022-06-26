@@ -1,11 +1,18 @@
 # Wanted[FE] Pre onboarding Assignment
 
+[바로가기 ✈️](https://wanted-pre-onboarding-fe.vercel.app/login)
+
 ## Introduce
 
 방분해 주셔서 감사합니다.  
 저는 작년 6월부터 FE 개발자를 독학으로 준비하고 있습니다.  
 아직 많이 부족하지만 이번 기회를 통해 좋은 멘토, 동료 분들과 함께 성장 하고자 지원하게 되었습니다. 감사합니다 :)
 
+- - -
+## 작업기간 
+```
+22.06.21 - 22.06.25
+```
 ---
 
 ## Directory
